@@ -46,7 +46,6 @@ Add following to yours `composer.json`:
 
     "scripts": {
         "post-install-cmd": [
-            "echo 'Hello'",
             "Insomnia\\MaxMindGeoIpBundle\\Composer\\ScriptHandler::downloadMaxMindDB"
         ],
         "post-update-cmd": [
