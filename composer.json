@@ -1,7 +1,7 @@
 {
     "name": "insomnia/geoip",
-    "description": "Bundle integrating MaxMind GeoIP database into application",
-    "keywords": [],
+    "description": "Bundle integrating MaxMind GeoIP database into symfony application",
+    "keywords": ["symfony", "geoip", "maxmind"],
     "license": "GPL",
     "authors": [
         {
@@ -10,7 +10,6 @@
             "role": "Developer"
         }
     ],
-    "description": "LoopLR project including api and web app",
     "autoload": {
         "psr-4": { "Insomnia\\MaxMindGeoIpBundle\\": "" }
     },
