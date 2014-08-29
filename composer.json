@@ -1,0 +1,39 @@
+{
+    "name": "insomnia/geoip",
+    "description": "Bundle integrating MaxMind GeoIP database into application",
+    "keywords": [],
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Alex Vasilenko",
+            "email": "aa.vasilenko@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "description": "LoopLR project including api and web app",
+    "autoload": {
+        "psr-4": { "Insomnia\\MaxMindGeoIpBundle\\": "" }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'Hello'",
+            "Insomnia\\MaxMindGeoIpBundle\\Composer\\ScriptHandler::downloadMaxMindDB"
+        ],
+        "post-update-cmd": [
+            "Insomnia\\MaxMindGeoIpBundle\\Composer\\ScriptHandler::downloadMaxMindDB"
+        ]
+    },
+    "require": {
+        "symfony/framework-bundle": "2.*",
+        "symfony/console": "2.*",
+        "maxmind-db/reader": "0.3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "composer/composer": "*@alpha"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "maxmind-db-path": "Tests/GeoLite2-Country.mmdb"
+    }
+}
