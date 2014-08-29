@@ -9,7 +9,7 @@ Installation
 This bundle helps you deliver MaxMind GeoIp functionality inside your symfony application. Based on [MaxMind library](https://github.com/maxmind/MaxMind-DB-Reader-php).
 Installation is same as for other bundles:
 
-    composer require mente/MaxGeoIpBundle *
+    composer require mente/max-mind-geo-ip-bundle *
 
 Don't forget to add bundle in your application kernel:
 
