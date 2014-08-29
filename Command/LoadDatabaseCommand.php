@@ -64,7 +64,7 @@ EOT
         if ($res != 0) {
             $output->writeln('<error>Unable to ungzip file</error>');
             $output->writeln(sprintf('<error>Command: %s</error>', $cmd));
-            $output->writeln(sprintf('<error>Output: %s</error>', $output));
+            $output->writeln(sprintf('<error>Output: %s</error>', $gzOutput));
         } else {
             $output->writeln('<info>Unzip completed</info>');
         }
