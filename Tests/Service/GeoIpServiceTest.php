@@ -14,6 +14,7 @@ use MaxMind\Db\Reader;
 class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
 {
     const IP_GOOGLE_DNS = '8.8.8.8';
+    const MY_IP         = '194.44.211.162';
     /**
      * @var GeoIpService
      */
@@ -49,5 +50,11 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
     public function testGetInvalidIp()
     {
         $this->service->get('256.255.255.255');
+    }
+
+    public function testUkraineIsInEurope()
+    {
+        $code = $this->service->getContinentCode(self::MY_IP);
+        $this->assertEquals('EU', $code, 'Ukraine is not in Europe. Do something');
     }
 } 
