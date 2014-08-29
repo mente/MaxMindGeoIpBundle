@@ -1,5 +1,5 @@
 {
-    "name": "insomnia/geoip",
+    "name": "mente/InsomniaMaxMindGeoIpBundle",
     "description": "Bundle integrating MaxMind GeoIP database into symfony application",
     "keywords": ["symfony", "geoip", "maxmind"],
     "license": "GPL",
