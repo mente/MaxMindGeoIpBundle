@@ -20,6 +20,9 @@ class ScriptHandler
     public static function downloadMaxMindDB(CommandEvent $cmd)
     {
         $options = $cmd->getComposer()->getPackage()->getExtra();
+        if (!isset($options['maxmind-db-path'])) {
+            throw new \InvalidArgumentException("You should specify 'maxmind-db-path' parameter pointing to geolite2 db path in composer extra.");
+        }
         $command = new LoadDatabaseCommand();
         $parameters = new ParameterBag(array('insomnia_max_mind_db_path' => $options['maxmind-db-path']));
         $command->setContainer(new Container($parameters));
