@@ -1,7 +1,7 @@
 Insomnia MaxGeoIp Bundle
 =======
 
-[![Build Status](https://travis-ci.org/mente/MaxMindGeoIpBundle.svg)](https://travis-ci.org/mente/MaxMindGeoIpBundle)
+[![Build Status](https://travis-ci.org/mente/MaxMindGeoIpBundle.svg?branch=master)](https://travis-ci.org/mente/MaxMindGeoIpBundle)
 
 Installation
 ====
