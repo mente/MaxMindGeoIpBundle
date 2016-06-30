@@ -1,8 +1,8 @@
 services:
     insomnia_max_mind_geo_ip_service:
         class: Insomnia\MaxMindGeoIpBundle\Service\GeoIpService
-        arguments: [@insomnia_max_mind_geo_ip]
+        arguments: ['@insomnia_max_mind_geo_ip']
 
     insomnia_max_mind_geo_ip:
         class: MaxMind\Db\Reader
-        arguments: [%insomnia_max_mind_db_path%]
+        arguments: ['%insomnia_max_mind_db_path%']
