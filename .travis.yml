@@ -10,10 +10,7 @@ env:
     - SYMFONY_VERSION=^2.8.0
     - SYMFONY_VERSION=^3.0
 
-before_script:
-  - phpenv config-rm xdebug.ini
-  - composer self-update
-  - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/framework-bundle:${SYMFONY_VERSION}" "symfony/console:${SYMFONY_VERSION}" --no-update; fi;
-  - composer install
+install:
+  - composer require "symfony/framework-bundle:${SYMFONY_VERSION}" "symfony/console:${SYMFONY_VERSION}"
 
 script: phpunit -v
