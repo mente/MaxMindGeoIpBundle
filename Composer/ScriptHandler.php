@@ -8,16 +8,16 @@
 namespace Insomnia\MaxMindGeoIpBundle\Composer;
 
 
+use Composer\Script\Event;
 use Insomnia\MaxMindGeoIpBundle\Command\LoadDatabaseCommand;
 use Symfony\Component\Console\Input\StringInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use Composer\Script\CommandEvent;
 
 class ScriptHandler
 {
-    public static function downloadMaxMindDB(CommandEvent $cmd)
+    public static function downloadMaxMindDB(Event $cmd)
     {
         $options = $cmd->getComposer()->getPackage()->getExtra();
         if (!isset($options['maxmind-db-path'])) {
@@ -30,4 +30,4 @@ class ScriptHandler
         $input = new StringInput('http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz');
         $command->run($input, new ConsoleOutput());
     }
-} 
+}
