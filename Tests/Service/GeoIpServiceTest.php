@@ -26,7 +26,7 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->geoIp = new Reader(__DIR__ . '/../GeoLite2-Country.mmdb');
+        $this->geoIp = new Reader(__DIR__ . '/../geolite2.mmdb');
         $this->service = new GeoIpService($this->geoIp);
     }
 

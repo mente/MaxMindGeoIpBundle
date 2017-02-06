@@ -23,7 +23,7 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('path')
-                    ->defaultValue('%kernel.root_dir%/geoip/geoip2.mmdb')
+                    ->defaultValue('%kernel.root_dir%/geolite2.mmdb')
                 ->end()
             ->end();
 
