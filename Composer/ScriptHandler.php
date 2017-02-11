@@ -27,7 +27,7 @@ class ScriptHandler
         $parameters = new ParameterBag(array('insomnia_max_mind_db_path' => $options['maxmind-db-path']));
         $command->setContainer(new Container($parameters));
 
-        $input = new StringInput('http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz');
+        $input = new StringInput($options['maxmind-db']);
         $command->run($input, new ConsoleOutput());
     }
 }
