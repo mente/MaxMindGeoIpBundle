@@ -37,7 +37,7 @@
     },
     "minimum-stability": "stable",
     "extra": {
-        "maxmind-db-path": "app/geolite2.mmdb",
+        "maxmind-db-path": "Tests/geolite2.mmdb",
         "maxmind-db": "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz"
     }
 }
