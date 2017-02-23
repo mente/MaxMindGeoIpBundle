@@ -1,12 +1,6 @@
 <?php
-/**
- * User: avasilenko
- * Date: 29.08.14
- * Time: 13:03
- */
 
 namespace Insomnia\MaxMindGeoIpBundle\Composer;
-
 
 use Composer\Script\Event;
 use Insomnia\MaxMindGeoIpBundle\Command\LoadDatabaseCommand;
@@ -27,7 +21,12 @@ class ScriptHandler
         $parameters = new ParameterBag(array('insomnia_max_mind_db_path' => $options['maxmind-db-path']));
         $command->setContainer(new Container($parameters));
 
-        $input = new StringInput($options['maxmind-db']);
+        // Allow to provide custom `maxmind-db` database link via `composer.json` extra section
+        $maxmindDatabaseLink = isset($options['maxmind-db']) 
+            ? $options['maxmind-db'] 
+            : 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.mmdb.gz'
+        ;
+        $input = new StringInput($maxmindDatabaseLink);
         $command->run($input, new ConsoleOutput());
     }
 }
