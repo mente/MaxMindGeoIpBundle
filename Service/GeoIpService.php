@@ -33,24 +33,36 @@ class GeoIpService
     public function getContinent($ip)
     {
         $res = $this->geoIp->get($ip);
-        return $res['continent'];
+        if (isset($res['continent'])) {
+            return $res['continent'];
+        }
+        return '';
     }
 
     public function getContinentCode($ip)
     {
         $res = $this->geoIp->get($ip);
-        return $res['continent']['code'];
+        if (isset($res['continent']['code'])) {
+            return $res['continent']['code'];
+        }
+        return '';
     }
 
     public function getCountry($ip)
     {
         $res = $this->geoIp->get($ip);
-        return $res['country'];
+        if (isset($res['country'])) {
+            return $res['country'];
+        }
+        return '';
     }
 
     public function getCountryCode($ip)
     {
         $res = $this->geoIp->get($ip);
-        return $res['country']['iso_code'];
+        if (isset($res['country']['iso_code'])) {
+            return $res['country']['iso_code'];
+        }
+        return '';
     }
 } 
