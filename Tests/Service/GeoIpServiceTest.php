@@ -48,26 +48,26 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
     
     public function testGetUnknownContinent()
     {
-        $res = $this->service->getContinent('127.0.0.1');
+        $res = $this->service->getContinent(self::LOCAL_HOST);
         $this->assertEquals('', $res);
     }
 
     public function testGetUnknownContinentCode()
     {
-        $res = $this->service->getContinentCode('127.0.0.1');
+        $res = $this->service->getContinentCode(self::LOCAL_HOST);
         $this->assertEquals('', $res);
     }
 
     public function testGetUnknownCountry()
     {
-        $res = $this->service->getCountry('127.0.0.1');
+        $res = $this->service->getCountry(self::LOCAL_HOST);
         $this->assertEquals('', $res);
 
     }
     
     public function testGetUnknownCountryCode()
     {
-        $res = $this->service->getCountryCode('127.0.0.1');
+        $res = $this->service->getCountryCode(self::LOCAL_HOST);
         $this->assertEquals('', $res);
 
     }
