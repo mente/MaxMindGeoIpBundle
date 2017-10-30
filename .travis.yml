@@ -3,7 +3,6 @@ language: php
 php:
   - 5.6
   - 7.0
-  - hhvm
 
 env:
     - SYMFONY_VERSION=^2.3.3
@@ -13,4 +12,4 @@ env:
 install:
   - composer require "symfony/framework-bundle:${SYMFONY_VERSION}" "symfony/console:${SYMFONY_VERSION}"
 
-script: phpunit -v
+script: ./vendor/bin/phpunit -v
