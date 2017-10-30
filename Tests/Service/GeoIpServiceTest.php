@@ -15,6 +15,8 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
 {
     const IP_GOOGLE_DNS = '8.8.8.8';
     const MY_IP         = '194.44.211.162';
+    const LOCAL_HOST    = '127.0.0.1';
+
     /**
      * @var GeoIpService
      */
@@ -42,6 +44,32 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
     {
         $res = $this->service->getCountry(self::IP_GOOGLE_DNS);
         $this->assertNotNull($res, 'Result is invalid');
+    }
+    
+    public function testGetUnknownContinent()
+    {
+        $res = $this->service->getContinent(self::LOCAL_HOST);
+        $this->assertEquals('', $res);
+    }
+
+    public function testGetUnknownContinentCode()
+    {
+        $res = $this->service->getContinentCode(self::LOCAL_HOST);
+        $this->assertEquals('', $res);
+    }
+
+    public function testGetUnknownCountry()
+    {
+        $res = $this->service->getCountry(self::LOCAL_HOST);
+        $this->assertEquals('', $res);
+
+    }
+    
+    public function testGetUnknownCountryCode()
+    {
+        $res = $this->service->getCountryCode(self::LOCAL_HOST);
+        $this->assertEquals('', $res);
+
     }
 
     /**
