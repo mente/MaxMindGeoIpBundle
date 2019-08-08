@@ -10,8 +10,9 @@ namespace Service;
 
 use Insomnia\MaxMindGeoIpBundle\Service\GeoIpService;
 use MaxMind\Db\Reader;
+use PHPUnit\Framework\TestCase;
 
-class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
+class GeoIpServiceTest extends TestCase
 {
     const IP_GOOGLE_DNS = '8.8.8.8';
     const MY_IP         = '194.44.211.162';
@@ -45,7 +46,7 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
         $res = $this->service->getCountry(self::IP_GOOGLE_DNS);
         $this->assertNotNull($res, 'Result is invalid');
     }
-    
+
     public function testGetUnknownContinent()
     {
         $res = $this->service->getContinent(self::LOCAL_HOST);
@@ -64,7 +65,7 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('', $res);
 
     }
-    
+
     public function testGetUnknownCountryCode()
     {
         $res = $this->service->getCountryCode(self::LOCAL_HOST);
@@ -85,4 +86,4 @@ class GeoIpServiceTest extends \PHPUnit_Framework_TestCase
         $code = $this->service->getContinentCode(self::MY_IP);
         $this->assertEquals('EU', $code, 'Ukraine is not in Europe. Do something');
     }
-} 
+}
