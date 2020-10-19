@@ -3,7 +3,7 @@
 namespace Insomnia\MaxMindGeoIpBundle\Command;
 
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -13,7 +13,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  * Date: 29.08.14
  * Time: 11:27
  */
-class LoadDatabaseCommand extends ContainerAwareCommand
+class LoadDatabaseCommand extends Command
 {
     protected function configure()
     {
