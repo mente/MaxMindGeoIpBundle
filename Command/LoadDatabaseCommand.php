@@ -59,7 +59,7 @@ EOT
 
         if (!copy($source, $tmpFile)) {
             $output->writeln('<error>Error during file download occurred</error>');
-            return;
+            return -1;
         }
 
         $output->writeln('<info>Download completed</info>');
@@ -73,8 +73,12 @@ EOT
             $output->writeln('<error>Unable to ungzip file</error>');
             $output->writeln(sprintf('<error>Command: %s</error>', $cmd));
             $output->writeln(sprintf('<error>Output: %s</error>', implode("\n", $gzOutput)));
+            return -2;
         } else {
             $output->writeln('<info>Unzip completed</info>');
+            return 0;
         }
+
+        return 0;
     }
 }
