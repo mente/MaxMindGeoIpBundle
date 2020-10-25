@@ -32,7 +32,7 @@
         "maxmind-db/reader": "^0.3|^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.0",
+        "phpunit/phpunit": "^9.0",
         "composer/composer": "dev-master@dev"
     },
     "minimum-stability": "stable",

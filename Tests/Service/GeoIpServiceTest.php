@@ -27,7 +27,7 @@ class GeoIpServiceTest extends TestCase
      */
     private $geoIp;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->geoIp = new Reader(__DIR__ . '/../geolite2.mmdb');
         $this->service = new GeoIpService($this->geoIp);
