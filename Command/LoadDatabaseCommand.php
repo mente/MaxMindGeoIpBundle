@@ -7,6 +7,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 /**
  * User: avasilenko
@@ -15,6 +16,13 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class LoadDatabaseCommand extends Command
 {
+    private $params;
+
+    public function __construct(ParameterBagInterface $params)
+    {
+        $this->params = $params;
+    }
+
     protected function configure()
     {
         $this
@@ -45,7 +53,7 @@ EOT
         $source = $input->getArgument('source');
 
         $tmpFile = tempnam(sys_get_temp_dir(), 'maxmind_geoip');
-        $destination = $this->getContainer()->getParameter('insomnia_max_mind_db_path');
+        $destination = $this->params->get('insomnia_max_mind_db_path');
         $output->writeln(sprintf('<info>Start downloading %s</info>', $source));
         $output->writeln('...');
 
