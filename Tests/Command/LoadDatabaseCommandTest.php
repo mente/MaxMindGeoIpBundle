@@ -14,13 +14,13 @@ class LoadDatabaseCommandTest extends TestCase
     {
         $application = new Application();
 
-        $parameters = new ParameterBag(array('insomnia_max_mind_db_path' => 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz'));
+        $parameters = new ParameterBag(array('insomnia_max_mind_db_path' => 'Tests/geolite2.mmdb'));
         $application->add(new LoadDatabaseCommand($parameters));
 
         $command = $application->find('insomnia:geoip:update');
         $commandTester = new CommandTester($command);
         $commandTester->execute([
-            'source' => 'http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz'
+            'source' => 'https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=lapMm8vBb5NREaqL&suffix=tar.gz'
         ]);
 
         // the output of the command in the console
