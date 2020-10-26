@@ -1,3 +1,5 @@
+**DEPRECATED** Use [gpslab/geoip](https://github.com/gpslab/geoip2) instead. It supports modern Symfony and PHP versions and has a better code quality.
+
 Insomnia MaxGeoIp Bundle
 =======
 
